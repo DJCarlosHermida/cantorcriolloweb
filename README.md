@@ -1,1 +1,1 @@
-| cantor criollo |
+| Cantor Criollo | Marcos Velásquez |
