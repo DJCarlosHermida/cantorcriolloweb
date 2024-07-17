@@ -1,6 +1,7 @@
 .header {
     background: linear-gradient(to left, rgba(2, 138, 43, 0.733), black);
     padding: 30px;
+    
 
     .header__container {
         max-width: 1000px;
@@ -29,6 +30,27 @@
                 text-decoration: none;
                 font-size: 20px;
             }
+            .header__link:hover {
+                color: orange;
+            }
         }
     }
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 360px) {
+    .header {
+        flex-direction: column;
+        font-size: 12px;
+    }
+
 }
