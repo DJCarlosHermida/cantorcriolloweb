@@ -1,13 +1,19 @@
-import { useCallback, useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { getImageUrl } from '../../config/media'
 import { navLinks } from '../../data/navigation'
 import './Navbar.scss'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const headerRef = useRef(null)
+  const location = useLocation()
 
   const closeMenu = useCallback(() => setOpen(false), [])
+
+  useEffect(() => {
+    closeMenu()
+  }, [location.pathname, closeMenu])
 
   useEffect(() => {
     if (!open) return undefined
@@ -25,8 +31,34 @@ export default function Navbar() {
     }
   }, [open, closeMenu])
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 900) closeMenu()
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [closeMenu])
+
+  useEffect(() => {
+    const header = headerRef.current
+    if (!header) return undefined
+
+    const syncNavbarHeight = () => {
+      header.style.setProperty('--navbar-height', `${header.offsetHeight}px`)
+    }
+
+    syncNavbarHeight()
+    window.addEventListener('resize', syncNavbarHeight)
+
+    return () => window.removeEventListener('resize', syncNavbarHeight)
+  }, [])
+
   return (
-    <header className="navbar">
+    <header
+      ref={headerRef}
+      className={`navbar${open ? ' navbar--open' : ''}`}
+    >
       <div className="navbar__container">
         <Link className="navbar__brand" to="/" onClick={closeMenu}>
           <img
@@ -57,7 +89,11 @@ export default function Navbar() {
           />
         )}
 
-        <nav className={`navbar__nav${open ? ' navbar__nav--open' : ''}`}>
+        <nav
+          className={`navbar__nav${open ? ' navbar__nav--open' : ''}`}
+          aria-hidden={!open}
+        >
+          <p className="navbar__nav-title">Menú</p>
           {navLinks.map((link) => (
             <NavLink
               key={link.path}
