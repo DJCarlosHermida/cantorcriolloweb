@@ -1,1 +1,1 @@
-export const proyectoPdfUrl = '/el-proyecto.pdf'
+export const proyectoPdfUrl = 'el-proyecto.pdf'

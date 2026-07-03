@@ -1,7 +1,7 @@
+import { getImageUrl } from '../../config/media'
 import { socialLinks, contactEmail, designerEmail } from '../../data/social'
 import SocialIcon from '../ui/SocialIcon'
 import './Footer.scss'
-
 export default function Footer() {
   return (
     <footer className="footer">
@@ -30,7 +30,7 @@ export default function Footer() {
         <p className="footer__support">
           Con el apoyo de{' '}
           <img
-            src="/img/logo_MEC_414x60px.png"
+            src={getImageUrl('img/logo_MEC_414x60px.png')}
             alt="Ministerio de Educación y Cultura"
           />
         </p>

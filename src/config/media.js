@@ -1,4 +1,5 @@
 const mediaBaseUrl = import.meta.env.VITE_MEDIA_URL?.replace(/\/$/, '') ?? ''
+const appBaseUrl = import.meta.env.BASE_URL
 
 const encodePath = (path) =>
   path
@@ -12,11 +13,11 @@ export const getMediaUrl = (path) => {
 
   const normalized = path.replace(/^\//, '')
 
-  if (!mediaBaseUrl) {
-    return `/${encodePath(normalized)}`
+  if (mediaBaseUrl) {
+    return `${mediaBaseUrl}/${encodePath(normalized)}`
   }
 
-  return `${mediaBaseUrl}/${encodePath(normalized)}`
+  return `${appBaseUrl}${encodePath(normalized)}`
 }
 
 export const getImageUrl = (path) => getMediaUrl(path)

@@ -2,7 +2,7 @@
   min-height: calc(100vh - 180px);
   background:
     linear-gradient(rgba(0, 80, 0, 0.25), rgba(0, 0, 0, 0.65)),
-    url('/img/para_fondo_gris.jpg') center / cover no-repeat fixed;
+    var(--panel-bg-image) center / cover no-repeat fixed;
   display: flex;
   align-items: center;
   justify-content: center;

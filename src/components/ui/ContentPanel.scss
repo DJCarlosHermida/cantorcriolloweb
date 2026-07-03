@@ -3,7 +3,7 @@
   padding: 2rem 1.25rem 3rem;
   background:
     linear-gradient(rgba(0, 80, 0, 0.2), rgba(0, 0, 0, 0.55)),
-    url('/img/para_fondo_gris.jpg') center / cover no-repeat fixed;
+    var(--panel-bg-image) center / cover no-repeat fixed;
 
   &__box {
     width: min(900px, 100%);

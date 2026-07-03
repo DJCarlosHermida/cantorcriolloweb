@@ -132,6 +132,16 @@ Usá `.env.example` como referencia. El archivo `.env` no se versiona.
 
 ## Despliegue
 
+### GitHub Pages
+
+El sitio se publica automáticamente en cada push a `main` mediante GitHub Actions.
+
+**URL:** https://djcarloshermida.github.io/cantorcriolloweb/
+
+En el repositorio, activá **Settings → Pages → Build and deployment → Source: GitHub Actions** (si no se activó automáticamente).
+
+El proyecto usa `base: '/cantorcriolloweb/'` en Vite para servir correctamente desde la subruta del repositorio.
+
 ### Vercel
 
 El proyecto incluye `vercel.json` con rewrites para SPA. Conectá el repositorio en Vercel y usá:

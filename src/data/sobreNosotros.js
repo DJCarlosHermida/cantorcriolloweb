@@ -1,4 +1,4 @@
-export const sobreNosotrosPdfUrl = '/cv-rodrigo-camano.pdf'
+export const sobreNosotrosPdfUrl = 'cv-rodrigo-camano.pdf'
 
 export const autorLibro = {
   name: 'Victoria Rodríguez Porras',

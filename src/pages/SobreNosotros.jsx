@@ -1,3 +1,4 @@
+import { getImageUrl } from '../config/media'
 import ContentPanel from '../components/ui/ContentPanel'
 import PdfLink from '../components/ui/PdfLink'
 import { autorLibro, sobreNosotrosPdfUrl } from '../data/sobreNosotros'
@@ -10,7 +11,7 @@ export default function SobreNosotros() {
         <aside className="sobre-nosotros__aside">
           <img
             className="sobre-nosotros__photo"
-            src="/img/solapa.jpg"
+            src={getImageUrl('img/solapa.jpg')}
             alt="Rodrígo Camaño"
           />
           <p className="sobre-nosotros__author">
@@ -21,7 +22,7 @@ export default function SobreNosotros() {
               rel="noreferrer"
               title="Instagram Victoria Rodríguez Porras"
             >
-              <img src="/img/instagram.png" alt="Instagram" />
+              <img src={getImageUrl('img/instagram.png')} alt="Instagram" />
               <em>{autorLibro.name}</em>
             </a>
           </p>
