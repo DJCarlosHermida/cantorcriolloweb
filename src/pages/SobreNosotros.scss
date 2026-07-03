@@ -1,0 +1,44 @@
+.sobre-nosotros {
+  display: grid;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: minmax(220px, 320px) 1fr;
+    align-items: start;
+  }
+
+  &__aside {
+    text-align: center;
+  }
+
+  &__photo {
+    width: min(100%, 320px);
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__author {
+    margin: 1rem 0 0;
+    padding: 0.75rem;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.08);
+    text-align: center;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #111;
+      text-decoration: none;
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+
+  &__content p {
+    margin: 0 0 1rem;
+  }
+}

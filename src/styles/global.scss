@@ -1,0 +1,46 @@
+@import './variables';
+
+*,*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $font-ui;
+  background-color: $cc-black-soft;
+  color: $cc-white;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.page__title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: #ffa420;
+}
+
+.page__placeholder {
+  margin: 0;
+  line-height: 1.7;
+  color: #ddd;
+}

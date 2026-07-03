@@ -1,0 +1,13 @@
+.pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #111;
+
+  img {
+    width: 30px;
+  }
+}

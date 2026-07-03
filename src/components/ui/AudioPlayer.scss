@@ -1,0 +1,21 @@
+.audio-player {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  text-align: center;
+
+  &__title {
+    margin: 0 0 0.5rem;
+    color: #111;
+    font-size: 1.1rem;
+  }
+
+  &__description {
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  audio {
+    width: min(100%, 480px);
+  }
+}

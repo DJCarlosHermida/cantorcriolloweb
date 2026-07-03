@@ -1,0 +1,85 @@
+.libros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 240px);
+  justify-content: center;
+  gap: 1.5rem;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 240px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+
+  &__image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 280px;
+    margin-bottom: 0.75rem;
+  }
+
+  &__cover {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.2s ease;
+
+    .libros__card:hover & {
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #111;
+  }
+
+  &__edition {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #222;
+  }
+}
+
+@media (min-width: 640px) {
+  .libros {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .libros {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+    &__card {
+      width: 100%;
+      max-width: 220px;
+    }
+
+    &__image-wrap {
+      width: 180px;
+      height: 252px;
+    }
+  }
+}

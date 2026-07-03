@@ -1,0 +1,37 @@
+.home {
+  min-height: calc(100vh - 180px);
+  background:
+    linear-gradient(rgba(0, 80, 0, 0.25), rgba(0, 0, 0, 0.65)),
+    url('/img/para_fondo_gris.jpg') center / cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.25rem;
+
+  &__hero {
+    width: min(760px, 100%);
+  }
+
+  &__quote {
+    background-color: rgba(255, 164, 32, 0.9);
+    color: #111;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    line-height: 1.7;
+
+    h1 {
+      margin: 0 0 1rem;
+      font-size: clamp(2rem, 5vw, 2.5rem);
+    }
+
+    p {
+      margin: 0 0 1rem;
+      font-size: 1.05rem;
+    }
+
+    strong {
+      font-size: 1.15rem;
+    }
+  }
+}
