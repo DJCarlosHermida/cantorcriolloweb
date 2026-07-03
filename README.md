@@ -132,22 +132,26 @@ Usá `.env.example` como referencia. El archivo `.env` no se versiona.
 
 ## Despliegue
 
-### GitHub Pages
+### Vercel (recomendado)
 
-El sitio se publica automáticamente en cada push a `main` mediante GitHub Actions.
+El proyecto incluye `vercel.json` con rewrites para SPA.
 
-**URL:** https://djcarloshermida.github.io/cantorcriolloweb/
+**Opción 1 — Dashboard**
 
-En el repositorio, activá **Settings → Pages → Build and deployment → Source: GitHub Actions** (si no se activó automáticamente).
+1. Importá el repositorio en [vercel.com](https://vercel.com)
+2. Framework preset: **Vite**
+3. Build command: `npm run build`
+4. Output directory: `dist`
 
-El proyecto usa `base: '/cantorcriolloweb/'` en Vite para servir correctamente desde la subruta del repositorio.
+**Opción 2 — CLI**
 
-### Vercel
+```bash
+npm i -g vercel
+vercel login
+vercel --prod
+```
 
-El proyecto incluye `vercel.json` con rewrites para SPA. Conectá el repositorio en Vercel y usá:
-
-- **Build command:** `npm run build`
-- **Output directory:** `dist`
+Cada push a `main` puede desplegarse automáticamente si conectás el repo en Vercel.
 
 ### Netlify
 
