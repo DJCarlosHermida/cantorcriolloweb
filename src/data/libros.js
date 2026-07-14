@@ -11,4 +11,10 @@ export const libros = [
     cover: 'img/libro_2_tapa.jpg',
     edition: '(2022), Edición del autor',
   },
+  {
+    id: 'cantos-pueblo-lucha-2025',
+    title: 'Marcos Velásquez, Cantos para un pueblo en lucha',
+    cover: 'img/marcosVelasquezCantos.jpeg',
+    edition: '(2025), Edición del autor',
+  },
 ]
